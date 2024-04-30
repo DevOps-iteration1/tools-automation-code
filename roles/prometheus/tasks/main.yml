@@ -3,6 +3,8 @@
     src: https://github.com/prometheus/proemtheus/relases/download/v{{ version }}/prometheus-{{ version }}.linux-amd64.tar.gz
     dest: /opt
     remote_src: yes
+    owner: bin
+    group : bin
 
 - name: Copy Prometheus Service File
   ansible.builtin.template:
