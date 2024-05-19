@@ -25,7 +25,7 @@ resource "aws_route53_record" "record" {
   ttl = 30
 }
 
-resource "aws_route53_record" "record" {
+resource "aws_route53_record" "public_record" {
   name    = var.tool_name
   type    = "A"
   zone_id = var.zone_id
