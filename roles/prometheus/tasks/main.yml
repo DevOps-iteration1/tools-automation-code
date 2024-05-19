@@ -15,7 +15,7 @@
     dest: /etc/systemd/system/prometheus.service
 
 - name: Copy Prometheus Configuration File
-  ansible.buitlin.template:
+  ansible.builtin.template:
     src: prometheus.yml
     dest: /opt/prometheus-{{ version }}.linux-amd64/prometheus.yml
 
