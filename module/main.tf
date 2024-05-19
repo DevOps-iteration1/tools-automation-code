@@ -26,7 +26,7 @@ resource "aws_route53_record" "record" {
 }
 
 resource "aws_route53_record" "public_record" {
-  name    = var.tool_name
+  name    = "${var.tool_name}-public"
   type    = "A"
   zone_id = var.zone_id
   records = [aws_instance.instance.public_ip]
