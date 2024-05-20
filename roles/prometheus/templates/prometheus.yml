@@ -13,6 +13,6 @@ scrape_configs:
 
     relabel_configs:
       - source_labels: [_meta_ec2_tag_Name]
-        target_label: name
+        target_label: Name
       - source_labels: [_meta_ec2_tag_env]
         target_label: env
