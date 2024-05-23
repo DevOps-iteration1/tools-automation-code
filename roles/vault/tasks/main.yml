@@ -8,3 +8,9 @@
   ansible.builtin.dnf:
     name: vault
     state: started
+
+- name: Start vault service
+  ansible.builtin.systemd_service:
+    name: vault
+    state: started
+    enabled: true
