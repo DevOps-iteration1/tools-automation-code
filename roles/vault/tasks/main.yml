@@ -7,7 +7,7 @@
 - name: Install Vault
   ansible.builtin.dnf:
     name: vault
-    state: started
+    state: installed
 
 - name: Start vault service
   ansible.builtin.systemd_service:
