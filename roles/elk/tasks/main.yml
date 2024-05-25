@@ -25,14 +25,14 @@
 - name: Change content in configuration file of Kibana
   ansible.builtin.lineinfile:
     path: /etc/kibana/kibana.yml
-    regexp: '^#server.port:5601'
-    line: "server.port:5601"
+    regexp: '^#server.port: 5601'
+    line: "server.port: 5601"
 
 - name: Change content in configuration file of Kibana
   ansible.builtin.lineinfile:
     path: /etc/kibana/kibana.yml
-    regexp: '^#server.host:localhost'
-    line: "server.host:0.0.0.0"
+    regexp: '^#server.host: localhost'
+    line: "server.host: 0.0.0.0"
 
 - name: Start kibana
   ansible.builtin.systemd_service:
