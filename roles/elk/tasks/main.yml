@@ -1,0 +1,35 @@
+- name: Set hostname
+  ansible.builtin.shell: sudo set-prompt elk
+
+- name: Copy repo file
+  ansible.builtin.template:
+    src: elasticsearch.repo
+    dest: /etc/yum.repos.d/elasticsearch.repo
+
+- name: Install Elasticsearch
+  ansible.builtin.dnf:
+    name: elasticsearch
+    state: installed
+
+- name: Start Elasticsearch service
+  ansible.builtin.systemd_service:
+    name: elasticsearch
+    state: started
+    enabled: true
+
+- name: Install Kibana
+  ansible.builtin.dnf:
+    name: kibana
+    state: installed
+
+- name: Copy and change content in configuration file of Kibana
+  ansible.builtin.lineinfile:
+    path: /etc/kibana/conf.d
+    regexp: '^#'
+    line: SELINUX=enforcing
+
+- name: Copy and change content in configuration file of Kibana
+  ansible.builtin.lineinfile:
+    path: /etc/kibana/conf.d
+    regexp: '^#'
+    line: SELINUX=enforcing
